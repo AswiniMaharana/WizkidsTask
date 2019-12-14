@@ -11,6 +11,7 @@ namespace Wizkids.Task
     {
         static void Main(string[] args)
         {
+            GetAlternativeWords("test");
             //Task 1: Write a method that determines if a string is a palindrome or not.
             Console.WriteLine("Task 1: Write a method that determines if a string is a palindrome or not.");
             //Testcase 1: Check valid palindrome
@@ -32,6 +33,15 @@ John's daughter Kira studies at Oxford University and has the email adress Kira1
 Her Twitter handle is @kira.cavebrown.";
             Console.WriteLine("ReplaceValidEmail= Input :{0}", input);
             Console.WriteLine("ReplaceValidEmail= Output :{0}", ReplaceValidEmail(input));
+
+            //Task 4: 
+            Console.WriteLine("Task 4:");
+            Console.WriteLine("Task 4.a> Input: Test");
+            Console.WriteLine("Task 4.a> OutPut: {0}", string.Join(", ", GetAlternativeWords("test")));
+
+            Console.WriteLine("Task 4.a> Input: Test");
+            Console.WriteLine("Task 4.a> OutPut: {0}", string.Join(", ", GetAlternativeWordsCount(4, 26)));
+
             Console.ReadKey();
         }
 
@@ -100,22 +110,40 @@ Her Twitter handle is @kira.cavebrown.";
             'u', 'v', 'w', 'x',
             'y', 'z'};
             var result = new List<string>();
-            //Insert
-            for(int i = 0; i< word.Length; i++)
+            
+            //Replace
+            for (int i = 0; i < word.Length; i++)
             {
-                string pre = word.Substring(0, i);
-                string post = word.Substring(i, word.Length - i);
                 foreach (var ch in chArr)
                 {
-                    result.Add($"{pre}{ch}{post}");
+                    StringBuilder tempstr = new StringBuilder(word);
+                    tempstr[i] = ch;
+                    result.Add(tempstr.ToString());
                 }
             }
-            //Replace
-
             //Remove
+            for (int i = 0; i < word.Length; i++)
+            {
+                StringBuilder tempstr = new StringBuilder(word);
+                tempstr[1] = ' ';
+                result.Add(tempstr.ToString());
+            }
 
             //Swap
+            for (int i = 0; i < word.Length-1; i++)
+            {
+                StringBuilder tempstr = new StringBuilder(word);
+                tempstr[i] = word[i + 1];
+                tempstr[i + 1] = word[i];
+                result.Add(tempstr.ToString());
+            }
 
+            return result;
+        }
+
+        static int GetAlternativeWordsCount(int wordLength, int alphabetLength)
+        {
+            return (wordLength*alphabetLength)*2 + (wordLength * 2);
         }
     }
 }
