@@ -11,8 +11,6 @@ namespace Wizkids.Task
     {
         static void Main(string[] args)
         {
-            string s = "";
-            var a = ReplaceValidEmail("i am asw@gmail.com     and i ");
             //Task 1: Write a method that determines if a string is a palindrome or not.
             Console.WriteLine("Task 1: Write a method that determines if a string is a palindrome or not.");
             //Testcase 1: Check valid palindrome
@@ -90,6 +88,34 @@ Her Twitter handle is @kira.cavebrown.";
             }
             
             return string.Join(" ", textArray);
+        }
+
+        static List<string> GetAlternativeWords(string word)
+        {
+            char[] chArr = new char[] { 'a', 'b', 'c', 'd',
+                'e', 'f', 'g', 'h',
+                'i', 'j', 'k', 'l',
+                'm', 'n', 'o', 'p',
+            'q', 'r', 's', 't',
+            'u', 'v', 'w', 'x',
+            'y', 'z'};
+            var result = new List<string>();
+            //Insert
+            for(int i = 0; i< word.Length; i++)
+            {
+                string pre = word.Substring(0, i);
+                string post = word.Substring(i, word.Length - i);
+                foreach (var ch in chArr)
+                {
+                    result.Add($"{pre}{ch}{post}");
+                }
+            }
+            //Replace
+
+            //Remove
+
+            //Swap
+
         }
     }
 }
