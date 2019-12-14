@@ -1,0 +1,6 @@
+D:\Programming\GitHUB\WizkidsTask\Wizkids.Task\Wizkids.Task\bin\Debug\Wizkids.Task.exe.config
+D:\Programming\GitHUB\WizkidsTask\Wizkids.Task\Wizkids.Task\bin\Debug\Wizkids.Task.exe
+D:\Programming\GitHUB\WizkidsTask\Wizkids.Task\Wizkids.Task\bin\Debug\Wizkids.Task.pdb
+D:\Programming\GitHUB\WizkidsTask\Wizkids.Task\Wizkids.Task\obj\Debug\Wizkids.Task.csprojResolveAssemblyReference.cache
+D:\Programming\GitHUB\WizkidsTask\Wizkids.Task\Wizkids.Task\obj\Debug\Wizkids.Task.exe
+D:\Programming\GitHUB\WizkidsTask\Wizkids.Task\Wizkids.Task\obj\Debug\Wizkids.Task.pdb
